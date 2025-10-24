@@ -233,6 +233,13 @@ Nach jeder Änderung:
 | Was ändern? | Welche Datei? |
 |------------|---------------|
 | Logo | `Navbar.jsx` & `Footer.jsx` |
+| Startseite | `HomePage.jsx` |
+| Leistungen-Seite | `LeistungenPage.jsx` |
+| Ablauf-Seite | `AblaufPage.jsx` |
+| Marktplätze-Seite | `MarktplaetzePage.jsx` |
+| Preise-Seite | `PreisePage.jsx` |
+| Referenzen-Seite | `ReferenzenPage.jsx` |
+| Kontakt-Seite | `KontaktPage.jsx` |
 | Texte, Services, Testimonials | `mockData.js` |
 | Hero-Text & Überschriften | `HeroSection.jsx` |
 | Farben (global) | `index.css` |
@@ -240,6 +247,8 @@ Nach jeder Änderung:
 | Navigation/Menü | `Navbar.jsx` |
 | FAQ | `mockData.js` |
 | Blog-Posts | `mockData.js` |
+
+**Alle Seiten-Dateien befinden sich in:** `/app/frontend/src/pages/`
 
 ---
 
