@@ -9,10 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-white">sell</span>
-              <span className="text-[#FFDA00]">Bridge</span>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yywulo3y_logo.png" 
+              alt="sellBridge Logo" 
+              className="h-8 w-auto mb-4 brightness-0 invert"
+            />
             <p className="text-gray-400 mb-4">
               Ihre Full-Service Agentur für erfolgreichen Verkauf auf allen wichtigen Marktplätzen.
             </p>
