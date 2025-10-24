@@ -60,13 +60,14 @@ const HeroSection = () => {
 
           {/* Right Image */}
           <div className="relative z-10">
-            <div className="relative">
-              <div className="absolute inset-0 bg-[#FFDA00] rounded-3xl transform rotate-3"></div>
-              <img
-                src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/vumsbw9z_grafik.png"
-                alt="sellBridge Team"
-                className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
-              />
+            <div className="relative bg-gradient-to-br from-[#FFDA00] to-[#FFC700] rounded-3xl p-12 shadow-2xl">
+              <div className="text-center">
+                <div className="text-8xl mb-6">📦</div>
+                <h3 className="text-3xl font-bold text-black mb-4">Effizient & Automatisiert</h3>
+                <p className="text-xl text-gray-900">
+                  Verkaufen auf über 23 Marktplätzen mit nur einer Plattform
+                </p>
+              </div>
             </div>
           </div>
         </div>
