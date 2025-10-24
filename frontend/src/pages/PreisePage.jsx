@@ -277,10 +277,12 @@ const PreisePage = () => {
           <p className="text-xl text-gray-300 mb-8">
             Lassen Sie sich unverbindlich beraten und finden Sie das perfekte Paket für Ihre Bedürfnisse.
           </p>
-          <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-            Beratungsgespräch vereinbaren
-            <ArrowRight className="ml-2" size={20} />
-          </Button>
+          <Link to="/kontakt">
+            <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+              Beratungsgespräch vereinbaren
+              <ArrowRight className="ml-2" size={20} />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
