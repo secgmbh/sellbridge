@@ -22,10 +22,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="text-3xl font-bold">
-              <span className="text-black">sell</span>
-              <span className="text-[#FFDA00]">Bridge</span>
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yywulo3y_logo.png" 
+              alt="sellBridge Logo" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
