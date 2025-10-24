@@ -215,9 +215,11 @@ const MarktplaetzePage = () => {
                         </li>
                       ))}
                     </ul>
-                    <Button className="w-full mt-6 bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold">
-                      Mehr erfahren
-                    </Button>
+                    <Link to="/kontakt">
+                      <Button className="w-full mt-6 bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold">
+                        Mehr erfahren
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
