@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { caseStudies, testimonials } from '../mockData';
 import { Star, ArrowRight, TrendingUp, Users, Target } from 'lucide-react';
