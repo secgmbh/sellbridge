@@ -262,9 +262,11 @@ const MarktplaetzePage = () => {
           <p className="text-xl text-gray-300 mb-8">
             Lassen Sie uns gemeinsam die optimale Marktplatz-Strategie für Ihre Marke entwickeln.
           </p>
-          <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-            Kostenlose Marktplatz-Beratung
-          </Button>
+          <Link to="/kontakt">
+            <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+              Kostenlose Marktplatz-Beratung
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
