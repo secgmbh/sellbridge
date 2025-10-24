@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { processSteps } from '../mockData';
 import { UserPlus, Link as LinkIcon, Rocket, Activity } from 'lucide-react';
 import { Button } from './ui/button';
@@ -73,9 +74,11 @@ const ProcessSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button className="bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold text-lg px-8 py-6">
-            Workflow ansehen
-          </Button>
+          <Link to="/ablauf">
+            <Button className="bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold text-lg px-8 py-6">
+              Workflow ansehen
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

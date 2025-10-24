@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { Phone } from 'lucide-react';
 
@@ -50,13 +51,17 @@ const CTASection = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-            Termin auswählen
-          </Button>
-          <Button variant="outline" className="border-2 border-[#FFDA00] text-[#FFDA00] hover:bg-[#FFDA00] hover:text-black font-semibold text-lg px-8 py-6">
-            <Phone className="mr-2" size={20} />
-            +49 123 456 7890
-          </Button>
+          <Link to="/kontakt">
+            <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+              Termin auswählen
+            </Button>
+          </Link>
+          <a href="tel:+491234567890">
+            <Button variant="outline" className="border-2 border-[#FFDA00] text-[#FFDA00] hover:bg-[#FFDA00] hover:text-black font-semibold text-lg px-8 py-6">
+              <Phone className="mr-2" size={20} />
+              +49 123 456 7890
+            </Button>
+          </a>
         </div>
       </div>
     </section>

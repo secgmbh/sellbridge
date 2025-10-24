@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { blogPosts } from '../mockData';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';

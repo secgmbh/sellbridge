@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { benefits } from '../mockData';
 import { TrendingUp, Search, DollarSign } from 'lucide-react';
 import { Button } from './ui/button';
@@ -65,9 +66,11 @@ const BenefitsSection = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-            Erstgespräch buchen
-          </Button>
+          <Link to="/kontakt">
+            <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+              Erstgespräch buchen
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

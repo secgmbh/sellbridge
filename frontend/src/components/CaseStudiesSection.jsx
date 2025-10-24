@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { caseStudies } from '../mockData';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/button';
@@ -60,10 +61,12 @@ const CaseStudiesSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-            Alle Case Studies ansehen
-            <ArrowRight className="ml-2" size={20} />
-          </Button>
+          <Link to="/referenzen">
+            <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+              Alle Case Studies ansehen
+              <ArrowRight className="ml-2" size={20} />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
