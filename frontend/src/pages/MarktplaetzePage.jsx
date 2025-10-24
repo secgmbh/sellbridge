@@ -123,9 +123,11 @@ const MarktplaetzePage = () => {
               Wir bringen Sie erfolgreich auf die wichtigsten E-Commerce-Plattformen in Deutschland und Europa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold text-lg px-8 py-6">
-                Marktplatz-Analyse anfordern
-              </Button>
+              <Link to="/kontakt">
+                <Button className="bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold text-lg px-8 py-6">
+                  Marktplatz-Analyse anfordern
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
