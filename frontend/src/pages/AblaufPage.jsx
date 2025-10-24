@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { UserPlus, Link as LinkIcon, Rocket, Activity, CheckCircle, Clock, Users, BarChart3 } from 'lucide-react';
 
