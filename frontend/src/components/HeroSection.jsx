@@ -48,13 +48,17 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-                Kostenloses Erstgespräch buchen
-                <ArrowRight className="ml-2" size={20} />
-              </Button>
-              <Button variant="outline" className="border-2 border-gray-300 hover:border-[#FFDA00] text-gray-700 font-semibold text-lg px-8 py-6">
-                Mehr über uns erfahren
-              </Button>
+              <Link to="/kontakt">
+                <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+                  Kostenloses Erstgespräch buchen
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+              </Link>
+              <Link to="/leistungen">
+                <Button variant="outline" className="border-2 border-gray-300 hover:border-[#FFDA00] text-gray-700 font-semibold text-lg px-8 py-6">
+                  Mehr über uns erfahren
+                </Button>
+              </Link>
             </div>
           </div>
 
