@@ -124,9 +124,11 @@ const ReferenzenPage = () => {
                     <p className="text-sm text-gray-600 italic">"{study.testimonial}"</p>
                   </div>
 
-                  <Button className="w-full bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold">
-                    Case Study lesen
-                  </Button>
+                  <Link to="/kontakt">
+                    <Button className="w-full bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold">
+                      Beratung anfragen
+                    </Button>
+                  </Link>
                 </div>
               </div>
             ))}
