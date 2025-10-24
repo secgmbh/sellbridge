@@ -206,9 +206,11 @@ const AblaufPage = () => {
           <p className="text-xl text-gray-300 mb-8">
             Vereinbaren Sie Ihr kostenloses Erstgespräch und erfahren Sie, wie wir Ihr Marktplatz-Geschäft skalieren können.
           </p>
-          <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
-            Kostenloses Erstgespräch buchen
-          </Button>
+          <Link to="/kontakt">
+            <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold text-lg px-8 py-6">
+              Kostenloses Erstgespräch buchen
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
