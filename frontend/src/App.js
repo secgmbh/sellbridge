@@ -10,6 +10,9 @@ import MarktplaetzePage from './pages/MarktplaetzePage';
 import PreisePage from './pages/PreisePage';
 import ReferenzenPage from './pages/ReferenzenPage';
 import KontaktPage from './pages/KontaktPage';
+import ImpressumPage from './pages/ImpressumPage';
+import DatenschutzPage from './pages/DatenschutzPage';
+import AGBPage from './pages/AGBPage';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
           <Route path="/preise" element={<PreisePage />} />
           <Route path="/referenzen" element={<ReferenzenPage />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+          <Route path="/impressum" element={<ImpressumPage />} />
+          <Route path="/datenschutz" element={<DatenschutzPage />} />
+          <Route path="/agb" element={<AGBPage />} />
         </Routes>
         <Footer />
         <Toaster />
