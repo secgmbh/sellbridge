@@ -112,9 +112,11 @@ const LeistungenPage = () => {
           <p className="text-xl text-gray-900 max-w-3xl mx-auto mb-8">
             Full-Service Marktplatz-Management für Ihren nachhaltigen Erfolg auf Amazon, OTTO, Kaufland und weiteren Plattformen.
           </p>
-          <Button className="bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold text-lg px-8 py-6">
-            Kostenlose Beratung anfordern
-          </Button>
+          <Link to="/kontakt">
+            <Button className="bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold text-lg px-8 py-6">
+              Kostenlose Beratung anfordern
+            </Button>
+          </Link>
         </div>
       </section>
 
