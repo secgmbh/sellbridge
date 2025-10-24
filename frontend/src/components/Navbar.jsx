@@ -84,9 +84,11 @@ const Navbar = () => {
                 <Phone size={18} />
                 <span className="font-semibold">+49 123 456 7890</span>
               </div>
-              <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold w-full">
-                Kostenlos beraten lassen
-              </Button>
+              <Link to="/kontakt" className="w-full">
+                <Button className="bg-[#FFDA00] hover:bg-[#E5C400] text-black font-semibold w-full">
+                  Kostenlos beraten lassen
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
