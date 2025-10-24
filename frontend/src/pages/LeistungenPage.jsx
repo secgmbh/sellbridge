@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Database, RefreshCw, MessageSquare, FileText, TrendingUp, BarChart, CheckCircle, ArrowRight } from 'lucide-react';
 
