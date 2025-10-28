@@ -19,7 +19,7 @@ const HeroSection = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Erfolgreich verkaufen auf
-              <span className="text-[#FFDA00]"> Amazon, OTTO</span> & Co.
+              <span className="text-[#FFDA00]"> OBI, Mediamarkt</span> & Co.
             </h1>
             
             <p className="text-lg text-gray-600 mb-8">
