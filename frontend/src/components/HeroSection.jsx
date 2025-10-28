@@ -65,14 +65,12 @@ const HeroSection = () => {
 
           {/* Right Image */}
           <div className="relative z-10">
-            <div className="relative bg-gradient-to-br from-[#FFDA00] to-[#FFC700] rounded-3xl p-12 shadow-2xl">
-              <div className="text-center">
-                <div className="text-8xl mb-6">📦</div>
-                <h3 className="text-3xl font-bold text-black mb-4">Effizient & Automatisiert</h3>
-                <p className="text-xl text-gray-900">
-                  Verkaufen auf über 23 Marktplätzen mit nur einer Plattform
-                </p>
-              </div>
+            <div className="relative">
+              <img
+                src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/0jb5w5er_hero_sell.png"
+                alt="Marktplätze - Amazon, eBay, OTTO, MediaMarkt und mehr"
+                className="relative rounded-3xl shadow-2xl w-full h-auto object-cover border-8 border-[#FFDA00]"
+              />
             </div>
           </div>
         </div>
