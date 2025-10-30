@@ -38,6 +38,28 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Contact Form Models
+class ContactFormRequest(BaseModel):
+    name: str = Field(..., min_length=1, max_length=255)
+    email: EmailStr
+    phone: Optional[str] = Field(None, max_length=50)
+    company: Optional[str] = Field(None, max_length=255)
+    interest: str = Field(..., min_length=1)
+    message: str = Field(..., min_length=1, max_length=5000)
+    
+    model_config = ConfigDict(
+        json_schema_extra={
+            "example": {
+                "name": "Max Mustermann",
+                "email": "[email protected]",
+                "phone": "+49 123 456 7890",
+                "company": "Musterfirma GmbH",
+                "interest": "full-service",
+                "message": "Ich interessiere mich für Ihre Dienstleistungen..."
+            }
+        }
+    )
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
