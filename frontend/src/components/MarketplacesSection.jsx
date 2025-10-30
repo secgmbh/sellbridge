@@ -44,8 +44,8 @@ const MarketplacesSection = () => {
           </h2>
         </div>
         
-        {/* Marketplace Logos Grid - 5 Logos nebeneinander */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center justify-items-center">
+        {/* Marketplace Logos Grid - 6 Logos */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center justify-items-center">
           {marketplaces.map((marketplace, index) => (
             <div
               key={index}
