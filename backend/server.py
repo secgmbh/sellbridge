@@ -267,7 +267,7 @@ async def get_available_slots(days: int = 14):
             creds=creds,
             start_date=start_date,
             end_date=end_date,
-            slot_duration_minutes=60
+            slot_duration_minutes=30  # 30 Minuten pro Slot
         )
         
         return {"slots": slots}
