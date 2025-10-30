@@ -89,6 +89,95 @@ async def get_status_checks():
     
     return status_checks
 
+@api_router.post("/contact", status_code=status.HTTP_200_OK)
+async def submit_contact_form(
+    form_data: ContactFormRequest,
+    background_tasks: BackgroundTasks
+):
+    """
+    Verarbeitet Kontaktformular-Anfragen und sendet E-Mails.
+    
+    Sendet Bestätigungs-E-Mail an den Kunden und Kopie an info@sellbridge.de.
+    """
+    try:
+        logger.info(f"Verarbeite Kontaktanfrage von {form_data.email}")
+        
+        # Sende E-Mails im Hintergrund (non-blocking)
+        background_tasks.add_task(
+            send_contact_emails,
+            form_data.email,
+            form_data.name,
+            form_data.phone or "",
+            form_data.company or "",
+            form_data.interest,
+            form_data.message
+        )
+        
+        # Speichere Anfrage in MongoDB (optional)
+        contact_doc = {
+            "id": str(uuid.uuid4()),
+            "name": form_data.name,
+            "email": form_data.email,
+            "phone": form_data.phone,
+            "company": form_data.company,
+            "interest": form_data.interest,
+            "message": form_data.message,
+            "timestamp": datetime.now(timezone.utc).isoformat()
+        }
+        await db.contact_requests.insert_one(contact_doc)
+        
+        logger.info(f"Kontaktanfrage von {form_data.email} erfolgreich gespeichert")
+        
+        return {
+            "success": True,
+            "message": "Ihre Anfrage wurde erfolgreich gesendet. Sie erhalten in Kürze eine Bestätigung per E-Mail."
+        }
+        
+    except Exception as e:
+        logger.error(f"Fehler bei Kontaktformular-Verarbeitung: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Bei der Verarbeitung Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+        )
+
+def send_contact_emails(
+    customer_email: str,
+    customer_name: str,
+    customer_phone: str,
+    company_name: str,
+    inquiry_subject: str,
+    inquiry_message: str
+):
+    """Sendet Bestätigungs- und Admin-Benachrichtigungs-E-Mails."""
+    try:
+        # Sende Bestätigung an Kunden
+        confirmation_sent = email_service.send_confirmation_email(
+            customer_email=customer_email,
+            customer_name=customer_name,
+            inquiry_subject=inquiry_subject
+        )
+        
+        if not confirmation_sent:
+            logger.warning(f"Konnte Bestätigung nicht an {customer_email} senden")
+        
+        # Sende Kopie an Admin
+        admin_notified = email_service.send_inquiry_copy(
+            customer_email=customer_email,
+            customer_name=customer_name,
+            customer_phone=customer_phone,
+            company_name=company_name,
+            inquiry_subject=inquiry_subject,
+            inquiry_message=inquiry_message
+        )
+        
+        if not admin_notified:
+            logger.warning("Konnte Admin-Benachrichtigung nicht senden")
+            
+        logger.info(f"E-Mails für {customer_email} erfolgreich versendet")
+        
+    except Exception as e:
+        logger.error(f"Fehler beim E-Mail-Versand: {str(e)}")
+
 # Include the router in the main app
 app.include_router(api_router)
 
