@@ -184,7 +184,8 @@ const MarktplaetzePage = () => {
     { name: "limango", category: "Familie & Kind", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/9w2cj23z_limango.jpg", size: "h-15" },
     { name: "Galaxus", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/9licnnui_galaxus.jpg", size: "h-15" },
     { name: "Temu", category: "Discount", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/76oj7q51_temu.jpg", size: "h-15" },
-    { name: "METRO", category: "Großhandel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/knehplz4_metro.jpg", size: "h-15" }
+    { name: "METRO", category: "Großhandel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/knehplz4_metro.jpg", size: "h-15" },
+    { name: "ePrice", category: "Italien", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/pbd1ejxw_eprice.jpg", size: "h-15" }
   ];
 
   return (
