@@ -299,7 +299,7 @@ async def book_appointment(appointment: AppointmentRequest):
         
         # Parse datetime
         start_time = datetime.fromisoformat(appointment.start_time.replace('Z', '+00:00'))
-        end_time = start_time + timedelta(hours=1)
+        end_time = start_time + timedelta(minutes=30)  # 30 Minuten Gespräch
         
         # Create appointment
         event_result = google_calendar_service.create_appointment(
