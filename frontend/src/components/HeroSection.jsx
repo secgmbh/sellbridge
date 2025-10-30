@@ -63,14 +63,67 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Visual */}
           <div className="relative z-10">
-            <div className="relative">
-              <img
-                src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/0jb5w5er_hero_sell.png"
-                alt="Marktplätze - Amazon, eBay, OTTO, MediaMarkt und mehr"
-                className="relative rounded-3xl shadow-2xl w-full h-auto object-cover border-8 border-[#FFDA00]"
-              />
+            <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl p-8 border-8 border-[#FFDA00]">
+              {/* Dashboard Mock */}
+              <div className="space-y-4">
+                {/* Header */}
+                <div className="flex justify-between items-center pb-4 border-b-2 border-gray-200">
+                  <h3 className="text-2xl font-bold text-gray-900">Performance Dashboard</h3>
+                  <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Live</span>
+                </div>
+                
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-gradient-to-br from-[#FFDA00] to-[#FFC700] rounded-xl p-4">
+                    <div className="text-sm text-black mb-1 font-medium">Umsatz heute</div>
+                    <div className="text-3xl font-bold text-black">€24,580</div>
+                    <div className="text-xs text-green-800 mt-1 font-semibold">↑ +28%</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 border-2 border-gray-200">
+                    <div className="text-sm text-gray-600 mb-1 font-medium">Bestellungen</div>
+                    <div className="text-3xl font-bold text-gray-900">187</div>
+                    <div className="text-xs text-green-600 mt-1 font-semibold">↑ +15%</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 border-2 border-gray-200">
+                    <div className="text-sm text-gray-600 mb-1 font-medium">Conversion</div>
+                    <div className="text-3xl font-bold text-gray-900">4.8%</div>
+                    <div className="text-xs text-green-600 mt-1 font-semibold">↑ +1.2%</div>
+                  </div>
+                  <div className="bg-white rounded-xl p-4 border-2 border-gray-200">
+                    <div className="text-sm text-gray-600 mb-1 font-medium">Produkte</div>
+                    <div className="text-3xl font-bold text-gray-900">842</div>
+                    <div className="text-xs text-gray-600 mt-1 font-semibold">Aktiv</div>
+                  </div>
+                </div>
+
+                {/* Chart */}
+                <div className="bg-white rounded-xl p-4 border-2 border-gray-200">
+                  <div className="text-sm font-semibold text-gray-700 mb-3">Verkäufe (7 Tage)</div>
+                  <div className="flex items-end justify-between h-24 space-x-2">
+                    {[65, 45, 75, 55, 85, 70, 90].map((height, i) => (
+                      <div
+                        key={i}
+                        className="flex-1 bg-gradient-to-t from-[#FFDA00] to-[#FFC700] rounded-t transition-all hover:opacity-80"
+                        style={{ height: `${height}%` }}
+                      ></div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Marketplaces */}
+                <div className="flex justify-between items-center pt-2">
+                  <div className="text-xs text-gray-500 font-medium">Aktive Marktplätze:</div>
+                  <div className="flex space-x-2">
+                    {['A', 'O', 'K', 'E'].map((letter, i) => (
+                      <div key={i} className="w-8 h-8 bg-[#FFDA00] rounded-full flex items-center justify-center text-black font-bold text-sm">
+                        {letter}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
