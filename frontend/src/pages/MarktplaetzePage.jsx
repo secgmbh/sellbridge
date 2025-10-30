@@ -31,6 +31,7 @@ const MarktplaetzePage = () => {
     },
     {
       name: "OTTO",
+      logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ns4vjl5t_Unbenannt2.png",
       description: "Deutschlands zweitgrößter Online-Marktplatz mit 11 Millionen aktiven Kunden. Ideal für Marken mit Fokus auf den DACH-Raum.",
       stats: {
         users: "11M+ aktive Kunden",
