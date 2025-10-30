@@ -159,7 +159,12 @@ const MarktplaetzePage = () => {
     { name: "bol.com", category: "Benelux", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/gh2695c8_bol.jpg", size: "h-15" },
     { name: "Cdiscount", category: "Frankreich", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/tkxop7ku_cdiscount.jpg", size: "h-15" },
     { name: "Zalando", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/34i0j16d_zalando.jpg", size: "h-15" },
-    { name: "AboutYou", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/jwarc76y_aboutyou.jpg", size: "h-15" }
+    { name: "AboutYou", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/jwarc76y_aboutyou.jpg", size: "h-15" },
+    { name: "home24", category: "Möbel & Wohnen", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/voruf5uz_home24.jpg", size: "h-15" },
+    { name: "CHECK24", category: "Vergleichsportal", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/fj8n14n5_check24.jpg", size: "h-15" },
+    { name: "SHEIN", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/je28925q_shein.jpg", size: "h-15" },
+    { name: "refurbed", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/c98k8u7c_refurbed.jpg", size: "h-15" },
+    { name: "Netto", category: "Lebensmittel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/vlmhtq4t_netto.jpg", size: "h-15" }
   ];
 
   return (
