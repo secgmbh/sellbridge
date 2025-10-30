@@ -28,9 +28,13 @@ const CaseStudiesSection = () => {
               key={study.id}
               className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
-              {/* Image placeholder */}
-              <div className="h-48 bg-gradient-to-br from-[#FFDA00] to-[#FFC700] flex items-center justify-center">
-                <div className="text-4xl font-bold text-black">{study.company.charAt(0)}</div>
+              {/* Image */}
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={study.image} 
+                  alt={study.company}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
               
               {/* Content */}
