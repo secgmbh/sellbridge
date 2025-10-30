@@ -132,36 +132,110 @@ class EmailService:
         try:
             subject = f"Neue Kundenanfrage: {inquiry_subject} von {customer_name}"
             
-            phone_info = f"<p><strong>Telefon:</strong> {customer_phone}</p>" if customer_phone else ""
-            company_info = f"<p><strong>Unternehmen:</strong> {company_name}</p>" if company_name else ""
+            phone_info = f"""
+                <tr>
+                    <td style="padding: 8px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00;">
+                        <strong style="color: #000000;">Telefon:</strong> {customer_phone}
+                    </td>
+                </tr>
+            """ if customer_phone else ""
+            
+            company_info = f"""
+                <tr>
+                    <td style="padding: 8px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00;">
+                        <strong style="color: #000000;">Unternehmen:</strong> {company_name}
+                    </td>
+                </tr>
+            """ if company_name else ""
             
             html_body = f"""
+            <!DOCTYPE html>
             <html>
-                <body style="font-family: Arial, sans-serif; color: #333;">
-                    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                        <h2 style="color: #000; border-bottom: 3px solid #FFDA00; padding-bottom: 10px;">
-                            Neue Kundenanfrage erhalten
-                        </h2>
-                        <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                            <p><strong>Von:</strong> {customer_name}</p>
-                            <p><strong>E-Mail:</strong> <a href="mailto:{customer_email}" style="color: #0066cc;">
-                                {customer_email}
-                            </a></p>
-                            {phone_info}
-                            {company_info}
-                            <p><strong>Betreff:</strong> {inquiry_subject}</p>
-                        </div>
-                        <hr style="border: none; border-top: 1px solid #ddd;">
-                        <h3 style="color: #000;">Nachricht:</h3>
-                        <div style="background-color: #fff; padding: 15px; border-left: 4px solid #FFDA00;">
-                            <p style="white-space: pre-wrap;">{inquiry_message}</p>
-                        </div>
-                        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-                        <p style="color: #666; font-size: 12px;">
-                            Diese E-Mail wurde automatisch vom sellBridge Kontaktformular generiert.
-                            Sie können direkt auf diese E-Mail antworten, um dem Kunden zu antworten.
-                        </p>
-                    </div>
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px 0;">
+                        <tr>
+                            <td align="center">
+                                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <!-- Header -->
+                                    <tr>
+                                        <td style="background: linear-gradient(135deg, #FFDA00 0%, #FFC700 100%); padding: 30px; text-align: center;">
+                                            <h1 style="margin: 0; color: #000000; font-size: 28px; font-weight: bold;">
+                                                🔔 Neue Kundenanfrage
+                                            </h1>
+                                            <p style="margin: 10px 0 0 0; color: #333333; font-size: 14px;">
+                                                sellBridge Kontaktformular
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Kundeninformationen -->
+                                    <tr>
+                                        <td style="padding: 30px;">
+                                            <h2 style="margin: 0 0 20px 0; color: #000000; font-size: 20px; border-bottom: 3px solid #FFDA00; padding-bottom: 10px;">
+                                                Kundendaten
+                                            </h2>
+                                            
+                                            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 25px;">
+                                                <tr>
+                                                    <td style="padding: 8px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00;">
+                                                        <strong style="color: #000000;">Name:</strong> {customer_name}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 8px 15px; background-color: #ffffff;">
+                                                        <strong style="color: #000000;">E-Mail:</strong> 
+                                                        <a href="mailto:{customer_email}" style="color: #0066cc; text-decoration: none;">
+                                                            {customer_email}
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                {phone_info}
+                                                {company_info}
+                                                <tr>
+                                                    <td style="padding: 8px 15px; background-color: #FFF9E6; border-left: 4px solid #FFDA00;">
+                                                        <strong style="color: #000000;">Interesse:</strong> {inquiry_subject}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <h3 style="margin: 0 0 15px 0; color: #000000; font-size: 18px;">
+                                                Nachricht des Kunden:
+                                            </h3>
+                                            
+                                            <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px;">
+                                                <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">
+                                                    {inquiry_message}
+                                                </p>
+                                            </div>
+                                            
+                                            <div style="background-color: #000000; padding: 15px 20px; border-radius: 4px; text-align: center;">
+                                                <p style="margin: 0; color: #FFDA00; font-size: 14px; font-weight: bold;">
+                                                    💡 Tipp: Klicken Sie auf "Antworten", um dem Kunden direkt zu antworten
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Footer -->
+                                    <tr>
+                                        <td style="background-color: #f5f5f5; padding: 20px 30px; border-top: 1px solid #e0e0e0;">
+                                            <p style="margin: 0; color: #666666; font-size: 12px; line-height: 1.5;">
+                                                Diese E-Mail wurde automatisch vom sellBridge Kontaktformular generiert.<br>
+                                                Sie können direkt auf diese E-Mail antworten, um den Kunden zu kontaktieren.
+                                            </p>
+                                            <p style="margin: 10px 0 0 0; color: #999999; font-size: 11px;">
+                                                sellBridge • Rathausweg 10 • 49661 Cloppenburg
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                 </body>
             </html>
             """
