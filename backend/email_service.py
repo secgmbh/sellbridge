@@ -218,11 +218,11 @@ class EmailService:
                                                 </tr>
                                             </table>
                                             
-                                            <h3 style="margin: 0 0 15px 0; color: #000000; font-size: 18px;">
+                                            <h3 style="margin: 0 0 15px 0; color: #000000; font-size: 18px; text-align: left;">
                                                 📝 Nachricht des Kunden:
                                             </h3>
                                             
-                                            <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px;">
+                                            <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px; text-align: left;">
                                                 <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6; white-space: pre-wrap; text-align: left;">
                                                     {inquiry_message}
                                                 </p>
