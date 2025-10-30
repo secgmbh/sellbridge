@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.sellbridge.de/sitemap.xml
+
+# Disallow admin/backend paths if any
+Disallow: /api/
+Disallow: /admin/
+
+# Crawl-delay
+Crawl-delay: 1
