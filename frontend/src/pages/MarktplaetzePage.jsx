@@ -7,6 +7,7 @@ const MarktplaetzePage = () => {
   const marketplaces = [
     {
       name: "Amazon",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
       description: "Der weltweit größte Online-Marktplatz mit über 300 Millionen aktiven Kunden. Perfekt für Marken, die internationale Reichweite suchen.",
       stats: {
         users: "300M+ Kunden weltweit",
