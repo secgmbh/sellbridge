@@ -14,6 +14,7 @@ import ImpressumPage from './pages/ImpressumPage';
 import DatenschutzPage from './pages/DatenschutzPage';
 import AGBPage from './pages/AGBPage';
 import AuthCallback from './pages/AuthCallback';
+import AdminCalendarAuth from './pages/AdminCalendarAuth';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/datenschutz" element={<DatenschutzPage />} />
           <Route path="/agb" element={<AGBPage />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
+          <Route path="/admin/calendar-auth" element={<AdminCalendarAuth />} />
         </Routes>
         <Footer />
         <Toaster />
