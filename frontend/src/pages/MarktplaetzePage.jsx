@@ -164,7 +164,12 @@ const MarktplaetzePage = () => {
     { name: "CHECK24", category: "Vergleichsportal", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/fj8n14n5_check24.jpg", size: "h-15" },
     { name: "SHEIN", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/je28925q_shein.jpg", size: "h-15" },
     { name: "refurbed", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/c98k8u7c_refurbed.jpg", size: "h-15" },
-    { name: "Netto", category: "Lebensmittel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/vlmhtq4t_netto.jpg", size: "h-15" }
+    { name: "Netto", category: "Lebensmittel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/vlmhtq4t_netto.jpg", size: "h-15" },
+    { name: "Decathlon", category: "Sport", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/db2wmznl_decathlon.jpg", size: "h-15" },
+    { name: "BILD Marktplatz", category: "Shopping", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/fgp672db_bildmarkplatz.jpg", size: "h-15" },
+    { name: "Bauhaus", category: "Baumarkt", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/gb6z2vi9_baushaus.jpg", size: "h-15" },
+    { name: "AUTODOC", category: "Auto & Motorrad", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/90t4cz4p_autodoc.jpg", size: "h-15" },
+    { name: "voelkner", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/r9y085rp_voelkner.jpg", size: "h-15" }
   ];
 
   return (
