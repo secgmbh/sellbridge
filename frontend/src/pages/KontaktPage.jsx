@@ -291,11 +291,12 @@ const KontaktPage = () => {
                     <span className="text-black">Transparente Kostenschätzung</span>
                   </li>
                 </ul>
-                <Link to="/kontakt">
-                  <Button className="w-full bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold">
-                    Termin online buchen
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full bg-black hover:bg-gray-900 text-[#FFDA00] font-semibold"
+                >
+                  Termin online buchen
+                </Button>
               </div>
 
               {/* Google Maps */}
