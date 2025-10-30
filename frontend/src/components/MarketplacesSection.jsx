@@ -6,18 +6,22 @@ const MarketplacesSection = () => {
     { 
       name: 'Amazon', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
+      maxHeight: 'max-h-14' // Kleiner für Amazon
     },
     { 
       name: 'OTTO', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ns4vjl5t_Unbenannt2.png',
+      maxHeight: 'max-h-20'
     },
     { 
       name: 'Kaufland', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/hb469b5t_Unbenannt.png',
+      maxHeight: 'max-h-20'
     },
     { 
       name: 'eBay', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg',
+      maxHeight: 'max-h-14' // Kleiner für eBay
     }
   ];
 
@@ -40,7 +44,7 @@ const MarketplacesSection = () => {
               <img 
                 src={marketplace.logo}
                 alt={`${marketplace.name} Logo`}
-                className="max-w-full max-h-20 object-contain"
+                className={`max-w-full ${marketplace.maxHeight} object-contain`}
               />
             </div>
           ))}
