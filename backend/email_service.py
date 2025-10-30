@@ -169,16 +169,22 @@ class EmailService:
                     <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px 0;">
                         <tr>
                             <td align="center">
-                                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                    <!-- Header -->
+                                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                    <!-- Header mit Logo -->
                                     <tr>
-                                        <td style="background: linear-gradient(135deg, #FFDA00 0%, #FFC700 100%); padding: 30px; text-align: center;">
-                                            <h1 style="margin: 0; color: #000000; font-size: 28px; font-weight: bold;">
-                                                🔔 Neue Kundenanfrage
+                                        <td style="background-color: #ffffff; padding: 30px; text-align: center; border-bottom: 4px solid #FFDA00;">
+                                            <img src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yywulo3y_logo.png" 
+                                                 alt="sellBridge Logo" 
+                                                 style="height: 50px; width: auto; display: inline-block;">
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Gelber Akzent-Streifen -->
+                                    <tr>
+                                        <td style="background: linear-gradient(135deg, #FFDA00 0%, #FFC700 100%); padding: 20px 30px; text-align: center;">
+                                            <h1 style="margin: 0; color: #000000; font-size: 24px; font-weight: bold;">
+                                                🔔 Neue Kundenanfrage erhalten
                                             </h1>
-                                            <p style="margin: 10px 0 0 0; color: #333333; font-size: 14px;">
-                                                sellBridge Kontaktformular
-                                            </p>
                                         </td>
                                     </tr>
                                     
@@ -191,12 +197,12 @@ class EmailService:
                                             
                                             <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 25px;">
                                                 <tr>
-                                                    <td style="padding: 8px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00;">
+                                                    <td style="padding: 10px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00; border-radius: 4px 4px 0 0;">
                                                         <strong style="color: #000000;">Name:</strong> {customer_name}
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 8px 15px; background-color: #ffffff;">
+                                                    <td style="padding: 10px 15px; background-color: #ffffff; border-left: 4px solid #e0e0e0;">
                                                         <strong style="color: #000000;">E-Mail:</strong> 
                                                         <a href="mailto:{customer_email}" style="color: #0066cc; text-decoration: none;">
                                                             {customer_email}
@@ -206,14 +212,14 @@ class EmailService:
                                                 {phone_info}
                                                 {company_info}
                                                 <tr>
-                                                    <td style="padding: 8px 15px; background-color: #FFF9E6; border-left: 4px solid #FFDA00;">
+                                                    <td style="padding: 10px 15px; background-color: #FFF9E6; border-left: 4px solid #FFDA00; border-radius: 0 0 4px 4px;">
                                                         <strong style="color: #000000;">Interesse:</strong> {inquiry_subject}
                                                     </td>
                                                 </tr>
                                             </table>
                                             
                                             <h3 style="margin: 0 0 15px 0; color: #000000; font-size: 18px;">
-                                                Nachricht des Kunden:
+                                                📝 Nachricht des Kunden:
                                             </h3>
                                             
                                             <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px;">
@@ -224,7 +230,7 @@ class EmailService:
                                             
                                             <div style="background-color: #000000; padding: 15px 20px; border-radius: 4px; text-align: center;">
                                                 <p style="margin: 0; color: #FFDA00; font-size: 14px; font-weight: bold;">
-                                                    💡 Tipp: Klicken Sie auf "Antworten", um dem Kunden direkt zu antworten
+                                                    💡 Klicken Sie auf "Antworten", um dem Kunden direkt zu antworten
                                                 </p>
                                             </div>
                                         </td>
@@ -233,11 +239,11 @@ class EmailService:
                                     <!-- Footer -->
                                     <tr>
                                         <td style="background-color: #f5f5f5; padding: 20px 30px; border-top: 1px solid #e0e0e0;">
-                                            <p style="margin: 0; color: #666666; font-size: 12px; line-height: 1.5;">
+                                            <p style="margin: 0; color: #666666; font-size: 12px; line-height: 1.5; text-align: center;">
                                                 Diese E-Mail wurde automatisch vom sellBridge Kontaktformular generiert.<br>
                                                 Sie können direkt auf diese E-Mail antworten, um den Kunden zu kontaktieren.
                                             </p>
-                                            <p style="margin: 10px 0 0 0; color: #999999; font-size: 11px;">
+                                            <p style="margin: 10px 0 0 0; color: #999999; font-size: 11px; text-align: center;">
                                                 sellBridge • Rathausweg 10 • 49661 Cloppenburg
                                             </p>
                                         </td>
