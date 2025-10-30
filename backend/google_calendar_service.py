@@ -129,7 +129,7 @@ class GoogleCalendarService:
         creds: Credentials,
         start_date: datetime,
         end_date: datetime,
-        slot_duration_minutes: int = 60
+        slot_duration_minutes: int = 30
     ) -> List[Dict]:
         """
         Gibt verfügbare Zeitslots zurück.
@@ -138,7 +138,7 @@ class GoogleCalendarService:
             creds: Google Credentials
             start_date: Start-Datum für die Suche
             end_date: End-Datum für die Suche
-            slot_duration_minutes: Dauer eines Slots in Minuten
+            slot_duration_minutes: Dauer eines Slots in Minuten (Standard: 30)
         
         Returns:
             Liste von verfügbaren Zeitslots
@@ -158,16 +158,16 @@ class GoogleCalendarService:
             
             events = events_result.get('items', [])
             
-            # Erstelle Liste aller möglichen Slots (9-17 Uhr, Mo-Fr)
+            # Erstelle Liste aller möglichen Slots (9-12 Uhr, Mo-Fr)
             available_slots = []
             current_date = start_date
             
             while current_date < end_date:
                 # Nur Wochentage (0=Montag, 4=Freitag)
                 if current_date.weekday() < 5:
-                    # Arbeitszeit: 9:00 bis 17:00 Uhr
+                    # Arbeitszeit: 9:00 bis 12:00 Uhr
                     work_start = current_date.replace(hour=9, minute=0, second=0, microsecond=0)
-                    work_end = current_date.replace(hour=17, minute=0, second=0, microsecond=0)
+                    work_end = current_date.replace(hour=12, minute=0, second=0, microsecond=0)
                     
                     slot_start = work_start
                     while slot_start + timedelta(minutes=slot_duration_minutes) <= work_end:
