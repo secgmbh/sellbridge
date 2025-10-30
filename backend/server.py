@@ -179,6 +179,171 @@ def send_contact_emails(
     except Exception as e:
         logger.error(f"Fehler beim E-Mail-Versand: {str(e)}")
 
+# Google Calendar Models
+class AppointmentRequest(BaseModel):
+    name: str = Field(..., min_length=1, max_length=255)
+    email: EmailStr
+    phone: Optional[str] = Field(None, max_length=50)
+    start_time: str  # ISO format datetime string
+    message: Optional[str] = Field(None, max_length=1000)
+
+# Google Calendar Endpoints
+@api_router.get("/calendar/auth/url")
+async def get_calendar_auth_url():
+    """Gibt OAuth-URL für Admin-Authentifizierung zurück."""
+    try:
+        auth_data = google_calendar_service.get_authorization_url()
+        return auth_data
+    except Exception as e:
+        logger.error(f"Fehler beim Erstellen der Auth-URL: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Fehler beim Erstellen der Authentifizierungs-URL"
+        )
+
+@api_router.get("/calendar/auth/callback")
+async def calendar_auth_callback(code: str):
+    """Callback für OAuth-Authentifizierung."""
+    try:
+        # Exchange code for tokens
+        auth_result = google_calendar_service.exchange_code_for_tokens(code)
+        
+        # Save tokens in database
+        await db.google_tokens.update_one(
+            {"type": "admin"},
+            {
+                "$set": {
+                    "tokens": auth_result["tokens"],
+                    "user_email": auth_result["user_email"],
+                    "updated_at": datetime.now(timezone.utc).isoformat()
+                }
+            },
+            upsert=True
+        )
+        
+        logger.info(f"Google Calendar erfolgreich authentifiziert für {auth_result['user_email']}")
+        
+        return {
+            "success": True,
+            "message": "Google Calendar erfolgreich verbunden",
+            "user_email": auth_result["user_email"]
+        }
+        
+    except Exception as e:
+        logger.error(f"Fehler beim Callback: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Fehler bei der Authentifizierung"
+        )
+
+@api_router.get("/calendar/available-slots")
+async def get_available_slots(days: int = 14):
+    """Gibt verfügbare Zeitslots zurück."""
+    try:
+        # Get tokens from database
+        token_doc = await db.google_tokens.find_one({"type": "admin"})
+        
+        if not token_doc:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Google Calendar nicht verbunden. Bitte authentifizieren Sie sich zuerst."
+            )
+        
+        # Get credentials
+        creds = google_calendar_service.get_credentials(token_doc["tokens"])
+        
+        # Update tokens if refreshed
+        if creds.token != token_doc["tokens"]["access_token"]:
+            await db.google_tokens.update_one(
+                {"type": "admin"},
+                {"$set": {"tokens.access_token": creds.token}}
+            )
+        
+        # Get available slots
+        start_date = datetime.now(timezone.utc)
+        end_date = start_date + timedelta(days=days)
+        
+        slots = google_calendar_service.get_available_slots(
+            creds=creds,
+            start_date=start_date,
+            end_date=end_date,
+            slot_duration_minutes=60
+        )
+        
+        return {"slots": slots}
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Fehler beim Abrufen der Slots: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Fehler beim Abrufen verfügbarer Termine"
+        )
+
+@api_router.post("/calendar/book-appointment")
+async def book_appointment(appointment: AppointmentRequest):
+    """Bucht einen Termin im Google Calendar."""
+    try:
+        # Get tokens from database
+        token_doc = await db.google_tokens.find_one({"type": "admin"})
+        
+        if not token_doc:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Google Calendar nicht verbunden"
+            )
+        
+        # Get credentials
+        creds = google_calendar_service.get_credentials(token_doc["tokens"])
+        
+        # Parse datetime
+        start_time = datetime.fromisoformat(appointment.start_time.replace('Z', '+00:00'))
+        end_time = start_time + timedelta(hours=1)
+        
+        # Create appointment
+        event_result = google_calendar_service.create_appointment(
+            creds=creds,
+            start_time=start_time,
+            end_time=end_time,
+            customer_name=appointment.name,
+            customer_email=appointment.email,
+            customer_phone=appointment.phone,
+            description=appointment.message
+        )
+        
+        # Save appointment in database
+        appointment_doc = {
+            "id": str(uuid.uuid4()),
+            "event_id": event_result["event_id"],
+            "name": appointment.name,
+            "email": appointment.email,
+            "phone": appointment.phone,
+            "start_time": start_time.isoformat(),
+            "end_time": end_time.isoformat(),
+            "message": appointment.message,
+            "created_at": datetime.now(timezone.utc).isoformat()
+        }
+        await db.appointments.insert_one(appointment_doc)
+        
+        logger.info(f"Termin gebucht für {appointment.name} am {start_time}")
+        
+        return {
+            "success": True,
+            "message": "Termin erfolgreich gebucht",
+            "event_id": event_result["event_id"],
+            "calendar_link": event_result["html_link"]
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Fehler beim Buchen des Termins: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Fehler beim Buchen des Termins. Bitte versuchen Sie es später erneut."
+        )
+
 # Include the router in the main app
 app.include_router(api_router)
 
