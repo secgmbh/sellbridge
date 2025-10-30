@@ -302,7 +302,15 @@ const MarktplaetzePage = () => {
                 key={index}
                 className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <Globe size={40} className="text-[#FFDA00] mx-auto mb-3" />
+                {platform.logo ? (
+                  <img 
+                    src={platform.logo} 
+                    alt={`${platform.name} Logo`}
+                    className="h-10 mx-auto mb-3 object-contain"
+                  />
+                ) : (
+                  <Globe size={40} className="text-[#FFDA00] mx-auto mb-3" />
+                )}
                 <h3 className="font-bold text-gray-900 mb-1">{platform.name}</h3>
                 <p className="text-sm text-gray-600">{platform.category}</p>
               </div>
