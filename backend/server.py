@@ -282,7 +282,7 @@ async def get_available_slots(days: int = 14):
         )
 
 @api_router.post("/calendar/book-appointment")
-async def book_appointment(appointment: AppointmentRequest):
+async def book_appointment(appointment: AppointmentRequest, background_tasks: BackgroundTasks):
     """Bucht einen Termin im Google Calendar."""
     try:
         # Get tokens from database
@@ -326,6 +326,19 @@ async def book_appointment(appointment: AppointmentRequest):
         }
         await db.appointments.insert_one(appointment_doc)
         
+        # Format datetime for email (German format)
+        appointment_datetime_str = start_time.strftime("%d.%m.%Y um %H:%M Uhr")
+        
+        # Send emails in background
+        background_tasks.add_task(
+            send_appointment_emails,
+            appointment.email,
+            appointment.name,
+            appointment.phone or "Nicht angegeben",
+            appointment_datetime_str,
+            appointment.message
+        )
+        
         logger.info(f"Termin gebucht für {appointment.name} am {start_time}")
         
         return {
@@ -343,6 +356,43 @@ async def book_appointment(appointment: AppointmentRequest):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Fehler beim Buchen des Termins. Bitte versuchen Sie es später erneut."
         )
+
+def send_appointment_emails(
+    customer_email: str,
+    customer_name: str,
+    customer_phone: str,
+    appointment_datetime: str,
+    message: str = None
+):
+    """Sendet Terminbestätigungs-E-Mails an Kunde und Admin."""
+    try:
+        # Sende Bestätigung an Kunden
+        customer_sent = email_service.send_appointment_confirmation_customer(
+            customer_email=customer_email,
+            customer_name=customer_name,
+            appointment_datetime=appointment_datetime,
+            customer_phone=customer_phone
+        )
+        
+        if not customer_sent:
+            logger.warning(f"Konnte Terminbestätigung nicht an {customer_email} senden")
+        
+        # Sende Benachrichtigung an Admin
+        admin_sent = email_service.send_appointment_notification_admin(
+            customer_email=customer_email,
+            customer_name=customer_name,
+            customer_phone=customer_phone,
+            appointment_datetime=appointment_datetime,
+            message=message
+        )
+        
+        if not admin_sent:
+            logger.warning("Konnte Admin-Benachrichtigung nicht senden")
+            
+        logger.info(f"Termin-E-Mails für {customer_name} erfolgreich versendet")
+        
+    except Exception as e:
+        logger.error(f"Fehler beim Senden der Termin-E-Mails: {str(e)}")
 
 # Include the router in the main app
 app.include_router(api_router)
