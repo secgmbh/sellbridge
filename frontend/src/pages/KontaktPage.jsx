@@ -6,9 +6,11 @@ import { Textarea } from '../components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { useToast } from '../hooks/use-toast';
+import AppointmentModal from '../components/AppointmentModal';
 
 const KontaktPage = () => {
   const { toast } = useToast();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
