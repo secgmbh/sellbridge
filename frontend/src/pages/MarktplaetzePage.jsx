@@ -79,6 +79,7 @@ const MarktplaetzePage = () => {
     },
     {
       name: "eBay",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg",
       description: "Einer der ältesten und etabliertesten Marktplätze mit breiter Produktpalette. Ideal für B2C und C2C Geschäftsmodelle.",
       stats: {
         users: "20M+ Kunden in Deutschland",
