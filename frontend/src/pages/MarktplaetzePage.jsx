@@ -159,8 +159,12 @@ const MarktplaetzePage = () => {
                   {/* Left: Main Info */}
                   <div className="lg:col-span-2">
                     <div className="flex items-start mb-6">
-                      <div className="w-16 h-16 bg-[#FFDA00] rounded-xl flex items-center justify-center mr-4">
-                        <ShoppingCart size={32} className="text-black" />
+                      <div className="w-24 h-24 bg-white rounded-xl flex items-center justify-center mr-4 p-4 border-2 border-gray-200">
+                        <img 
+                          src={marketplace.logo} 
+                          alt={`${marketplace.name} Logo`}
+                          className="max-w-full max-h-full object-contain"
+                        />
                       </div>
                       <div>
                         <h3 className="text-3xl font-bold text-gray-900 mb-2">
