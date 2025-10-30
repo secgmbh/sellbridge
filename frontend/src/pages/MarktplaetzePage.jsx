@@ -124,6 +124,30 @@ const MarktplaetzePage = () => {
         "Attraktive Zielgruppe mit Kaufkraft",
         "Wachsender Online-Anteil"
       ]
+    },
+    {
+      name: "HORNBACH",
+      logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/o2z1b8i1_grafik.png",
+      description: "Premium-Baumarkt mit starker Marke im Profi- und Heimwerker-Segment. Bekannt für 'Es gibt immer was zu tun' - ideal für hochwertige Bau- und Gartenprodukte.",
+      stats: {
+        users: "12M+ Kunden",
+        market: "Premium DIY-Segment",
+        growth: "18% jährliches Wachstum"
+      },
+      services: [
+        "HORNBACH Marketplace Onboarding",
+        "Premium-Produktdarstellung",
+        "Profi-Sortiment Integration",
+        "Content-Marketing für DIY-Projekte",
+        "Cross-Channel Kampagnen",
+        "Qualitätsfokussiertes Listing"
+      ],
+      benefits: [
+        "Premium-Positionierung im Markt",
+        "Starke Projekt-Community",
+        "Hohe Durchschnittspreise",
+        "Loyale Stammkundschaft"
+      ]
     }
   ];
 
