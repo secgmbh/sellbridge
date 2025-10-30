@@ -306,7 +306,7 @@ const MarktplaetzePage = () => {
                   <img 
                     src={platform.logo} 
                     alt={`${platform.name} Logo`}
-                    className="h-10 mx-auto mb-3 object-contain"
+                    className="h-16 mx-auto mb-3 object-contain"
                   />
                 ) : (
                   <Globe size={40} className="text-[#FFDA00] mx-auto mb-3" />
