@@ -58,7 +58,7 @@ const KontaktPage = () => {
     {
       icon: MapPin,
       title: "Adresse",
-      content: "Musterstraße 123, 12345 Berlin",
+      content: "Rathausweg 10, 49661 Cloppenburg",
       subtext: "Termine nach Vereinbarung"
     },
     {
