@@ -5,12 +5,6 @@ const MarketplacesSection = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <p className="text-gray-600 font-medium mb-4">
-            Wir bringen Sie erfolgreich auf die wichtigsten Marktplätze
-          </p>
-        </div>
-        
         {/* Original Marketplace Logos Image */}
         <div className="flex justify-center">
           <img 
