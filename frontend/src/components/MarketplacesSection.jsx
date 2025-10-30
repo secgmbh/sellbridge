@@ -27,6 +27,11 @@ const MarketplacesSection = () => {
       name: 'OBI', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/luieocu2_Screenshot%202025-10-30%20093705.png',
       maxHeight: 'max-h-28' // Größer als vorher
+    },
+    { 
+      name: 'HORNBACH', 
+      logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/o2z1b8i1_grafik.png',
+      maxHeight: 'max-h-28'
     }
   ];
 
