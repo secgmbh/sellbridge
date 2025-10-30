@@ -40,26 +40,28 @@ class EmailService:
                     <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px 0;">
                         <tr>
                             <td align="center">
-                                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                                    <!-- Header mit sellBridge Branding -->
+                                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                    <!-- Header mit Logo -->
                                     <tr>
-                                        <td style="background: linear-gradient(135deg, #FFDA00 0%, #FFC700 100%); padding: 40px 30px; text-align: center;">
-                                            <h1 style="margin: 0; color: #000000; font-size: 32px; font-weight: bold; letter-spacing: -0.5px;">
-                                                sellBridge
+                                        <td style="background-color: #ffffff; padding: 30px; text-align: center; border-bottom: 4px solid #FFDA00;">
+                                            <img src="https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yywulo3y_logo.png" 
+                                                 alt="sellBridge Logo" 
+                                                 style="height: 50px; width: auto; display: inline-block;">
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Gelber Akzent-Streifen -->
+                                    <tr>
+                                        <td style="background: linear-gradient(135deg, #FFDA00 0%, #FFC700 100%); padding: 20px 30px; text-align: center;">
+                                            <h1 style="margin: 0; color: #000000; font-size: 24px; font-weight: bold;">
+                                                Vielen Dank für Ihre Anfrage!
                                             </h1>
-                                            <p style="margin: 10px 0 0 0; color: #333333; font-size: 14px;">
-                                                Ihr Partner für E-Commerce-Erfolg
-                                            </p>
                                         </td>
                                     </tr>
                                     
                                     <!-- Content -->
                                     <tr>
                                         <td style="padding: 40px 30px;">
-                                            <h2 style="margin: 0 0 20px 0; color: #000000; font-size: 24px; border-bottom: 3px solid #FFDA00; padding-bottom: 10px;">
-                                                Vielen Dank für Ihre Anfrage!
-                                            </h2>
-                                            
                                             <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px; line-height: 1.6;">
                                                 Hallo {customer_name},
                                             </p>
@@ -68,9 +70,11 @@ class EmailService:
                                                 wir haben Ihre Anfrage zu <strong style="color: #000000;">{inquiry_subject}</strong> erhalten und bedanken uns für Ihr Interesse an sellBridge.
                                             </p>
                                             
-                                            <div style="background-color: #FFF9E6; border-left: 4px solid #FFDA00; padding: 15px 20px; margin: 25px 0; border-radius: 4px;">
+                                            <div style="background-color: #FFF9E6; border-left: 4px solid #FFDA00; padding: 20px; margin: 25px 0; border-radius: 4px;">
+                                                <p style="margin: 0 0 10px 0; color: #000000; font-size: 16px; font-weight: bold;">
+                                                    ⏱️ Was passiert jetzt?
+                                                </p>
                                                 <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6;">
-                                                    <strong style="color: #000000;">Was passiert jetzt?</strong><br>
                                                     Unser Team prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden bei Ihnen zurück. 
                                                     Wir freuen uns darauf, Sie kennenzulernen!
                                                 </p>
@@ -88,13 +92,19 @@ class EmailService:
                                             <p style="margin: 0 0 10px 0; color: #FFFFFF; font-size: 16px; font-weight: bold;">
                                                 sellBridge
                                             </p>
+                                            <p style="margin: 0 0 5px 0; color: #CCCCCC; font-size: 14px;">
+                                                Rathausweg 10
+                                            </p>
                                             <p style="margin: 0 0 15px 0; color: #CCCCCC; font-size: 14px;">
-                                                Rathausweg 10 • 49661 Cloppenburg
+                                                49661 Cloppenburg
                                             </p>
                                             <p style="margin: 0 0 5px 0;">
                                                 <a href="mailto:{self.sender_email}" style="color: #FFDA00; text-decoration: none; font-size: 14px;">
                                                     {self.sender_email}
                                                 </a>
+                                            </p>
+                                            <p style="margin: 0 0 5px 0; color: #CCCCCC; font-size: 14px;">
+                                                +49 123 456 7890
                                             </p>
                                             <p style="margin: 15px 0 0 0; color: #888888; font-size: 12px;">
                                                 © 2025 sellBridge. Alle Rechte vorbehalten.
