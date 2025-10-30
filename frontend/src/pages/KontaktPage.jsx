@@ -260,13 +260,18 @@ const KontaktPage = () => {
                 </Link>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="bg-gray-200 rounded-2xl h-64 flex items-center justify-center">
-                <div className="text-center text-gray-600">
-                  <MapPin size={48} className="mx-auto mb-2" />
-                  <p>Karte</p>
-                  <p className="text-sm">Musterstraße 123, 12345 Berlin</p>
-                </div>
+              {/* Google Maps */}
+              <div className="bg-gray-200 rounded-2xl overflow-hidden h-64">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2397.7824987654327!2d8.042896!3d52.848889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b6e3c8e8e8e8e9%3A0x1234567890abcdef!2sRathausweg%2010%2C%2049661%20Cloppenburg%2C%20Germany!5e0!3m2!1sen!2sde!4v1234567890123!5m2!1sen!2sde"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="sellBridge Standort"
+                ></iframe>
               </div>
             </div>
           </div>
