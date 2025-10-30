@@ -30,22 +30,81 @@ class EmailService:
             subject = f"Bestätigung: Ihre Anfrage zu {inquiry_subject}"
             
             html_body = f"""
+            <!DOCTYPE html>
             <html>
-                <body style="font-family: Arial, sans-serif; color: #333;">
-                    <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
-                        <h2 style="color: #000; border-bottom: 3px solid #FFDA00; padding-bottom: 10px;">
-                            Vielen Dank, {customer_name}!
-                        </h2>
-                        <p>Wir haben Ihre Anfrage zu <strong>{inquiry_subject}</strong> erhalten.</p>
-                        <p>Unser Team wird Ihre Nachricht prüfen und sich so schnell wie möglich bei Ihnen melden.</p>
-                        <p>In der Zwischenzeit können Sie uns jederzeit weitere Informationen per E-Mail zukommen lassen.</p>
-                        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-                        <p>Mit freundlichen Grüßen,<br>
-                        <strong>{self.sender_name} Team</strong><br>
-                        <a href="mailto:{self.sender_email}" style="color: #FFDA00; text-decoration: none;">
-                            {self.sender_email}
-                        </a></p>
-                    </div>
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                </head>
+                <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f5f5f5; padding: 20px 0;">
+                        <tr>
+                            <td align="center">
+                                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                                    <!-- Header mit sellBridge Branding -->
+                                    <tr>
+                                        <td style="background: linear-gradient(135deg, #FFDA00 0%, #FFC700 100%); padding: 40px 30px; text-align: center;">
+                                            <h1 style="margin: 0; color: #000000; font-size: 32px; font-weight: bold; letter-spacing: -0.5px;">
+                                                sellBridge
+                                            </h1>
+                                            <p style="margin: 10px 0 0 0; color: #333333; font-size: 14px;">
+                                                Ihr Partner für E-Commerce-Erfolg
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Content -->
+                                    <tr>
+                                        <td style="padding: 40px 30px;">
+                                            <h2 style="margin: 0 0 20px 0; color: #000000; font-size: 24px; border-bottom: 3px solid #FFDA00; padding-bottom: 10px;">
+                                                Vielen Dank für Ihre Anfrage!
+                                            </h2>
+                                            
+                                            <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px; line-height: 1.6;">
+                                                Hallo {customer_name},
+                                            </p>
+                                            
+                                            <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px; line-height: 1.6;">
+                                                wir haben Ihre Anfrage zu <strong style="color: #000000;">{inquiry_subject}</strong> erhalten und bedanken uns für Ihr Interesse an sellBridge.
+                                            </p>
+                                            
+                                            <div style="background-color: #FFF9E6; border-left: 4px solid #FFDA00; padding: 15px 20px; margin: 25px 0; border-radius: 4px;">
+                                                <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6;">
+                                                    <strong style="color: #000000;">Was passiert jetzt?</strong><br>
+                                                    Unser Team prüft Ihre Anfrage und meldet sich innerhalb von 24 Stunden bei Ihnen zurück. 
+                                                    Wir freuen uns darauf, Sie kennenzulernen!
+                                                </p>
+                                            </div>
+                                            
+                                            <p style="margin: 20px 0 0 0; color: #333333; font-size: 16px; line-height: 1.6;">
+                                                Sollten Sie weitere Fragen haben, können Sie jederzeit auf diese E-Mail antworten.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Footer -->
+                                    <tr>
+                                        <td style="background-color: #000000; padding: 30px; text-align: center;">
+                                            <p style="margin: 0 0 10px 0; color: #FFFFFF; font-size: 16px; font-weight: bold;">
+                                                sellBridge
+                                            </p>
+                                            <p style="margin: 0 0 15px 0; color: #CCCCCC; font-size: 14px;">
+                                                Rathausweg 10 • 49661 Cloppenburg
+                                            </p>
+                                            <p style="margin: 0 0 5px 0;">
+                                                <a href="mailto:{self.sender_email}" style="color: #FFDA00; text-decoration: none; font-size: 14px;">
+                                                    {self.sender_email}
+                                                </a>
+                                            </p>
+                                            <p style="margin: 15px 0 0 0; color: #888888; font-size: 12px;">
+                                                © 2025 sellBridge. Alle Rechte vorbehalten.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                 </body>
             </html>
             """
