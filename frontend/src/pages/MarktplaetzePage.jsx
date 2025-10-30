@@ -174,7 +174,12 @@ const MarktplaetzePage = () => {
     { name: "DocMorris", category: "Apotheke", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/vmvykvcb_docmorris.jpg", size: "h-15" },
     { name: "Hood", category: "Auktionen", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/rqcqqlsd_hood.jpg", size: "h-15" },
     { name: "Conrad", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/amr2lejj_conrad.jpg", size: "h-15" },
-    { name: "Fruugo", category: "International", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/lfsa22nx_fruugo.jpg", size: "h-15" }
+    { name: "Fruugo", category: "International", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/lfsa22nx_fruugo.jpg", size: "h-15" },
+    { name: "Praktiker", category: "Baumarkt", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/f16i2516_praktiker.jpg", size: "h-15" },
+    { name: "Wayfair", category: "Möbel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/0zz96gxg_wayfair.jpg", size: "h-15" },
+    { name: "Rue du Commerce", category: "Frankreich", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/p0s33azr_ruedecommerce.jpg", size: "h-15" },
+    { name: "XXXLutz", category: "Möbel", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/nnphmpk1_xxllutz.jpg", size: "h-15" },
+    { name: "TikTok Shop", category: "Social Commerce", logo: "https://customer-assets.emergentagent.com/job_marketplace-hub-107/artifacts/q4baj2mg_tiktokshop.jpg", size: "h-15" }
   ];
 
   return (
