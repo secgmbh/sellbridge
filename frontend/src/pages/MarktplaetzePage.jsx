@@ -153,7 +153,7 @@ const MarktplaetzePage = () => {
 
   const additionalPlatforms = [
     { name: "MediaMarkt", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ikul2ysr_grafik.png" },
-    { name: "Shop Apotheke", category: "Gesundheit" },
+    { name: "Shop Apotheke", category: "Gesundheit", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/5grjwes2_grafik.png" },
     { name: "Walmart", category: "International" },
     { name: "Allegro", category: "Osteuropa" },
     { name: "bol.com", category: "Benelux" },
