@@ -136,7 +136,7 @@ const AppointmentModal = ({ isOpen, onClose }) => {
                       <Calendar className="text-[#FFDA00]" size={20} />
                       <div>
                         <div className="font-semibold text-black">{slot.display}</div>
-                        <div className="text-sm text-gray-600">60 Minuten</div>
+                        <div className="text-sm text-gray-600">30 Minuten</div>
                       </div>
                     </button>
                   ))}
