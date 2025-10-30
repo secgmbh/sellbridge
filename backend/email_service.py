@@ -223,7 +223,7 @@ class EmailService:
                                             </h3>
                                             
                                             <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px;">
-                                                <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">
+                                                <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6; white-space: pre-wrap; text-align: left;">
                                                     {inquiry_message}
                                                 </p>
                                             </div>
