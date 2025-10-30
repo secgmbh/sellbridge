@@ -6,22 +6,18 @@ const MarketplacesSection = () => {
     { 
       name: 'Amazon', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
-      textLogo: false
     },
     { 
       name: 'OTTO', 
-      textLogo: true,
-      textColor: '#D40000'
+      logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ns4vjl5t_Unbenannt2.png',
     },
     { 
       name: 'Kaufland', 
-      textLogo: true,
-      textColor: '#D40E14'
+      logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/hb469b5t_Unbenannt.png',
     },
     { 
       name: 'eBay', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg',
-      textLogo: false
     }
   ];
 
@@ -41,24 +37,11 @@ const MarketplacesSection = () => {
               key={index}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-[250px] h-40 flex items-center justify-center border-2 border-gray-100 hover:border-[#FFDA00]"
             >
-              {marketplace.textLogo ? (
-                <div 
-                  className="text-5xl font-bold"
-                  style={{ color: marketplace.textColor }}
-                >
-                  {marketplace.name}
-                </div>
-              ) : (
-                <img 
-                  src={marketplace.logo}
-                  alt={`${marketplace.name} Logo`}
-                  className="max-w-full max-h-20 object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `<div class="text-4xl font-bold text-gray-900">${marketplace.name}</div>`;
-                  }}
-                />
-              )}
+              <img 
+                src={marketplace.logo}
+                alt={`${marketplace.name} Logo`}
+                className="max-w-full max-h-20 object-contain"
+              />
             </div>
           ))}
         </div>
