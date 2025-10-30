@@ -198,19 +198,12 @@ class GoogleCalendarService:
                             else:
                                 event_end = event_end.astimezone(timezone.utc)
                             
-                            # Make slot times timezone-aware in UTC if needed
-                            if slot_start.tzinfo is None:
-                                slot_start_aware = slot_start.replace(tzinfo=timezone.utc)
-                            else:
-                                slot_start_aware = slot_start
-                            
-                            if slot_end.tzinfo is None:
-                                slot_end_aware = slot_end.replace(tzinfo=timezone.utc)
-                            else:
-                                slot_end_aware = slot_end
+                            # Debug logging
+                            logger.info(f"Vergleiche Slot {slot_start} - {slot_end} mit Event {event_start} - {event_end}")
                             
                             # Wenn sich Slot und Event überschneiden
-                            if not (slot_end_aware <= event_start or slot_start_aware >= event_end):
+                            if not (slot_end <= event_start or slot_start >= event_end):
+                                logger.info(f"Slot {slot_start} ist NICHT verfügbar (überschneidet mit Event)")
                                 is_available = False
                                 break
                         
