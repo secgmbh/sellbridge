@@ -152,12 +152,12 @@ const MarktplaetzePage = () => {
   ];
 
   const additionalPlatforms = [
-    { name: "MediaMarkt", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/d1zdx5p5_grafik.png", size: "h-15" },
+    { name: "MediaMarkt", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/uxau8bdw_mediamarkt.jpg", size: "h-15" },
     { name: "Shop Apotheke", category: "Gesundheit", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/xz0fl7n7_shopapotheke.jpg", size: "h-15" },
-    { name: "Walmart", category: "International", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yci62cra_grafik.png", size: "h-15" },
-    { name: "Allegro", category: "Osteuropa" },
-    { name: "bol.com", category: "Benelux" },
-    { name: "Cdiscount", category: "Frankreich" },
+    { name: "Walmart", category: "International", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/fufggwgw_walmart.jpg", size: "h-15" },
+    { name: "Allegro", category: "Osteuropa", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/8vpilacj_allegro.jpg", size: "h-15" },
+    { name: "bol.com", category: "Benelux", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/gh2695c8_bol.jpg", size: "h-15" },
+    { name: "Cdiscount", category: "Frankreich", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/tkxop7ku_cdiscount.jpg", size: "h-15" },
     { name: "Zalando", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/34i0j16d_zalando.jpg", size: "h-15" },
     { name: "AboutYou", category: "Fashion", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/jwarc76y_aboutyou.jpg", size: "h-15" }
   ];
