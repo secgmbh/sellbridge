@@ -39,12 +39,12 @@ const MarketplacesSection = () => {
           </h2>
         </div>
         
-        {/* Marketplace Logos Grid - 5 Logos */}
-        <div className="flex flex-wrap justify-center gap-8">
+        {/* Marketplace Logos Grid - 5 Logos nebeneinander */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center justify-items-center">
           {marketplaces.map((marketplace, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-[220px] h-40 flex items-center justify-center border-2 border-gray-100 hover:border-[#FFDA00]"
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-[220px] h-40 flex items-center justify-center border-2 border-gray-100 hover:border-[#FFDA00]"
             >
               <img 
                 src={marketplace.logo}
