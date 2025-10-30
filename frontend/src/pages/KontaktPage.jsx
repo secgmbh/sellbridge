@@ -18,21 +18,57 @@ const KontaktPage = () => {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Hier würde die eigentliche Form-Submission stattfinden
-    toast({
-      title: "Anfrage gesendet!",
-      description: "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
-    });
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      interest: '',
-      message: ''
-    });
+    
+    // Validierung
+    if (!formData.interest) {
+      toast({
+        title: "Fehler",
+        description: "Bitte wählen Sie ein Interessengebiet aus.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    try {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const response = await fetch(`${backendUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        toast({
+          title: "Anfrage gesendet!",
+          description: data.message || "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+        });
+        
+        // Formular zurücksetzen
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          interest: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.detail || 'Fehler beim Senden der Anfrage');
+      }
+    } catch (error) {
+      console.error('Fehler beim Senden der Anfrage:', error);
+      toast({
+        title: "Fehler",
+        description: error.message || "Bei der Verarbeitung Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleChange = (e) => {
