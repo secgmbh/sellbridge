@@ -190,19 +190,19 @@ class EmailService:
                                     
                                     <!-- Kundeninformationen -->
                                     <tr>
-                                        <td style="padding: 30px;">
+                                        <td style="padding: 30px; text-align: left;">
                                             <h2 style="margin: 0 0 20px 0; color: #000000; font-size: 20px; border-bottom: 3px solid #FFDA00; padding-bottom: 10px;">
                                                 Kundendaten
                                             </h2>
                                             
                                             <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 25px;">
                                                 <tr>
-                                                    <td style="padding: 10px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00; border-radius: 4px 4px 0 0;">
+                                                    <td style="padding: 10px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00; border-radius: 4px 4px 0 0; text-align: left;">
                                                         <strong style="color: #000000;">Name:</strong> {customer_name}
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="padding: 10px 15px; background-color: #ffffff; border-left: 4px solid #e0e0e0;">
+                                                    <td style="padding: 10px 15px; background-color: #ffffff; border-left: 4px solid #e0e0e0; text-align: left;">
                                                         <strong style="color: #000000;">E-Mail:</strong> 
                                                         <a href="mailto:{customer_email}" style="color: #0066cc; text-decoration: none;">
                                                             {customer_email}
@@ -212,7 +212,7 @@ class EmailService:
                                                 {phone_info}
                                                 {company_info}
                                                 <tr>
-                                                    <td style="padding: 10px 15px; background-color: #FFF9E6; border-left: 4px solid #FFDA00; border-radius: 0 0 4px 4px;">
+                                                    <td style="padding: 10px 15px; background-color: #FFF9E6; border-left: 4px solid #FFDA00; border-radius: 0 0 4px 4px; text-align: left;">
                                                         <strong style="color: #000000;">Interesse:</strong> {inquiry_subject}
                                                     </td>
                                                 </tr>
@@ -222,8 +222,8 @@ class EmailService:
                                                 📝 Nachricht des Kunden:
                                             </h3>
                                             
-                                            <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px; text-align: left;">
-                                                <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6; white-space: pre-wrap; text-align: left;">
+                                            <div style="background-color: #f9f9f9; padding: 20px; border-left: 4px solid #FFDA00; border-radius: 4px; margin-bottom: 25px; text-align: left; direction: ltr;">
+                                                <p style="margin: 0; color: #333333; font-size: 15px; line-height: 1.6; white-space: pre-wrap; text-align: left; direction: ltr;">
                                                     {inquiry_message}
                                                 </p>
                                             </div>
