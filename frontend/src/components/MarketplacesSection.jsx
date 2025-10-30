@@ -6,22 +6,27 @@ const MarketplacesSection = () => {
     { 
       name: 'Amazon', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
-      maxHeight: 'max-h-14' // Kleiner für Amazon
+      maxHeight: 'max-h-16'
     },
     { 
       name: 'OTTO', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ns4vjl5t_Unbenannt2.png',
-      maxHeight: 'max-h-20'
+      maxHeight: 'max-h-24' // Größer
     },
     { 
       name: 'Kaufland', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/hb469b5t_Unbenannt.png',
-      maxHeight: 'max-h-20'
+      maxHeight: 'max-h-24' // Größer
     },
     { 
       name: 'eBay', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/EBay_logo.svg',
-      maxHeight: 'max-h-14' // Kleiner für eBay
+      maxHeight: 'max-h-16'
+    },
+    { 
+      name: 'OBI', 
+      logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/luieocu2_Screenshot%202025-10-30%20093705.png',
+      maxHeight: 'max-h-16'
     }
   ];
 
@@ -34,12 +39,12 @@ const MarketplacesSection = () => {
           </h2>
         </div>
         
-        {/* Marketplace Logos Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+        {/* Marketplace Logos Grid - 5 Logos */}
+        <div className="flex flex-wrap justify-center gap-8">
           {marketplaces.map((marketplace, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-[250px] h-40 flex items-center justify-center border-2 border-gray-100 hover:border-[#FFDA00]"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full max-w-[220px] h-40 flex items-center justify-center border-2 border-gray-100 hover:border-[#FFDA00]"
             >
               <img 
                 src={marketplace.logo}
