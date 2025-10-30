@@ -160,7 +160,7 @@ export const caseStudies = [
     industry: "Elektronik",
     challenge: "Komplexe Produktverwaltung über 5 Marktplätze",
     result: "210% Umsatzsteigerung in 6 Monaten",
-    image: "case1",
+    image: "https://images.unsplash.com/39/lIZrwvbeRuuzqOoWJUEn_Photoaday_CSD%20%281%20of%201%29-5.jpg",
     testimonial: "sellBridge hat unsere Marktplatz-Strategie revolutioniert. Die Automatisierung spart uns unzählige Stunden."
   },
   {
@@ -169,7 +169,7 @@ export const caseStudies = [
     industry: "Mode & Textilien",
     challenge: "Bestandsverwaltung und schnelle Produktupdates",
     result: "Überverkäufe um 95% reduziert",
-    image: "case2",
+    image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04",
     testimonial: "Die Bestandsautomatisierung funktioniert perfekt. Keine Überverkäufe mehr!"
   },
   {
@@ -178,7 +178,7 @@ export const caseStudies = [
     industry: "Haus & Garten",
     challenge: "Expansion auf internationale Marktplätze",
     result: "Erfolgreicher Launch in 4 neuen Ländern",
-    image: "case3",
+    image: "https://images.unsplash.com/photo-1586175554766-77513ac248d0",
     testimonial: "Mit sellBridge konnten wir problemlos international expandieren."
   }
 ];
