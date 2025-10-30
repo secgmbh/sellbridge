@@ -11,12 +11,12 @@ const MarketplacesSection = () => {
     { 
       name: 'OTTO', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ns4vjl5t_Unbenannt2.png',
-      maxHeight: 'max-h-24' // Größer
+      maxHeight: 'max-h-24'
     },
     { 
       name: 'Kaufland', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/hb469b5t_Unbenannt.png',
-      maxHeight: 'max-h-24' // Größer
+      maxHeight: 'max-h-24'
     },
     { 
       name: 'eBay', 
@@ -26,7 +26,7 @@ const MarketplacesSection = () => {
     { 
       name: 'OBI', 
       logo: 'https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/luieocu2_Screenshot%202025-10-30%20093705.png',
-      maxHeight: 'max-h-16'
+      maxHeight: 'max-h-24' // Größer, wie OTTO und Kaufland
     }
   ];
 
