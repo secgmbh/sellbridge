@@ -55,6 +55,7 @@ const MarktplaetzePage = () => {
     },
     {
       name: "Kaufland",
+      logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/hb469b5t_Unbenannt.png",
       description: "Der aufstrebende Marktplatz der Schwarz-Gruppe mit starkem Wachstum. Besonders stark in den Kategorien Food, Non-Food und Haushalt.",
       stats: {
         users: "8M+ Kunden monatlich",
