@@ -165,6 +165,10 @@ class GoogleCalendarService:
             while current_date < end_date:
                 # Nur Wochentage (0=Montag, 4=Freitag)
                 if current_date.weekday() < 5:
+                    # Ensure current_date is timezone-aware
+                    if current_date.tzinfo is None:
+                        current_date = current_date.replace(tzinfo=timezone.utc)
+                    
                     # Arbeitszeit: 9:00 bis 12:00 Uhr
                     work_start = current_date.replace(hour=9, minute=0, second=0, microsecond=0)
                     work_end = current_date.replace(hour=12, minute=0, second=0, microsecond=0)
