@@ -8,8 +8,9 @@ from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from email_service import email_service
+from google_calendar_service import google_calendar_service
 
 
 ROOT_DIR = Path(__file__).parent
