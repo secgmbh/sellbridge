@@ -144,7 +144,7 @@ class EmailService:
             
             phone_info = f"""
                 <tr>
-                    <td style="padding: 8px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00;">
+                    <td style="padding: 10px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00; text-align: left;">
                         <strong style="color: #000000;">Telefon:</strong> {customer_phone}
                     </td>
                 </tr>
@@ -152,7 +152,7 @@ class EmailService:
             
             company_info = f"""
                 <tr>
-                    <td style="padding: 8px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00;">
+                    <td style="padding: 10px 15px; background-color: #f9f9f9; border-left: 4px solid #FFDA00; text-align: left;">
                         <strong style="color: #000000;">Unternehmen:</strong> {company_name}
                     </td>
                 </tr>
