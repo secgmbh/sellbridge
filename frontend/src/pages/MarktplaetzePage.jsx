@@ -152,9 +152,9 @@ const MarktplaetzePage = () => {
   ];
 
   const additionalPlatforms = [
-    { name: "MediaMarkt", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/ikul2ysr_grafik.png", size: "h-14" },
+    { name: "MediaMarkt", category: "Elektronik", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/d1zdx5p5_grafik.png", size: "h-14" },
     { name: "Shop Apotheke", category: "Gesundheit", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/5grjwes2_grafik.png", size: "h-10" },
-    { name: "Walmart", category: "International", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yci62cra_grafik.png", size: "h-14" },
+    { name: "Walmart", category: "International", logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/yci62cra_grafik.png", size: "h-18" },
     { name: "Allegro", category: "Osteuropa" },
     { name: "bol.com", category: "Benelux" },
     { name: "Cdiscount", category: "Frankreich" },
