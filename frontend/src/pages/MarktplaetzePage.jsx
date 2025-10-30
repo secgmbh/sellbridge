@@ -100,6 +100,30 @@ const MarktplaetzePage = () => {
         "Starke Nischen-Communities",
         "Etablierte Käuferschaft"
       ]
+    },
+    {
+      name: "OBI",
+      logo: "https://customer-assets.emergentagent.com/job_4143fb9e-6acb-4cbf-a312-06fb39f285b2/artifacts/luieocu2_Screenshot%202025-10-30%20093705.png",
+      description: "Führender Baumarkt und DIY-Marktplatz in Deutschland. Ideal für Heimwerker-, Garten- und Bauprodukten mit starker Markenbindung.",
+      stats: {
+        users: "15M+ Kunden",
+        market: "Führend im DIY-Segment",
+        growth: "20% jährliches Wachstum"
+      },
+      services: [
+        "OBI Marketplace Setup",
+        "Produktdaten-Optimierung für DIY",
+        "Kategorien-spezifisches Marketing",
+        "Content-Erstellung für Bauprodukte",
+        "Saisonale Kampagnenplanung",
+        "Performance-Tracking & Reporting"
+      ],
+      benefits: [
+        "Starke Marke im Heimwerker-Bereich",
+        "Hohe Kundentreue",
+        "Attraktive Zielgruppe mit Kaufkraft",
+        "Wachsender Online-Anteil"
+      ]
     }
   ];
 
