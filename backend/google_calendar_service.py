@@ -176,11 +176,37 @@ class GoogleCalendarService:
                         # Prüfe, ob Slot verfügbar ist
                         is_available = True
                         for event in events:
-                            event_start = datetime.fromisoformat(event['start'].get('dateTime', event['start'].get('date')))
-                            event_end = datetime.fromisoformat(event['end'].get('dateTime', event['end'].get('date')))
+                            event_start_str = event['start'].get('dateTime', event['start'].get('date'))
+                            event_end_str = event['end'].get('dateTime', event['end'].get('date'))
+                            
+                            # Parse datetime and convert to UTC if needed
+                            event_start = datetime.fromisoformat(event_start_str.replace('Z', '+00:00'))
+                            event_end = datetime.fromisoformat(event_end_str.replace('Z', '+00:00'))
+                            
+                            # Ensure both are timezone-aware and in UTC
+                            if event_start.tzinfo is None:
+                                event_start = event_start.replace(tzinfo=timezone.utc)
+                            else:
+                                event_start = event_start.astimezone(timezone.utc)
+                            
+                            if event_end.tzinfo is None:
+                                event_end = event_end.replace(tzinfo=timezone.utc)
+                            else:
+                                event_end = event_end.astimezone(timezone.utc)
+                            
+                            # Make slot times timezone-aware in UTC if needed
+                            if slot_start.tzinfo is None:
+                                slot_start_aware = slot_start.replace(tzinfo=timezone.utc)
+                            else:
+                                slot_start_aware = slot_start
+                            
+                            if slot_end.tzinfo is None:
+                                slot_end_aware = slot_end.replace(tzinfo=timezone.utc)
+                            else:
+                                slot_end_aware = slot_end
                             
                             # Wenn sich Slot und Event überschneiden
-                            if not (slot_end <= event_start or slot_start >= event_end):
+                            if not (slot_end_aware <= event_start or slot_start_aware >= event_end):
                                 is_available = False
                                 break
                         
