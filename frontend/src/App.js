@@ -13,6 +13,7 @@ import KontaktPage from './pages/KontaktPage';
 import ImpressumPage from './pages/ImpressumPage';
 import DatenschutzPage from './pages/DatenschutzPage';
 import AGBPage from './pages/AGBPage';
+import AuthCallback from './pages/AuthCallback';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/impressum" element={<ImpressumPage />} />
           <Route path="/datenschutz" element={<DatenschutzPage />} />
           <Route path="/agb" element={<AGBPage />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
         </Routes>
         <Footer />
         <Toaster />
